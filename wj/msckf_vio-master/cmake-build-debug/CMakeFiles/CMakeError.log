@@ -1,0 +1,114 @@
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/wagnjin/catkin_ws/src/msckf_vio-master/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/wagnjin/Desktop/CLion-2021.3.3/clion-2021.3.3/bin/ninja/linux/ninja cmTC_abac3 && [1/2] Building CXX object CMakeFiles/cmTC_abac3.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_abac3
+FAILED: cmTC_abac3 
+: && /usr/bin/c++  -rdynamic CMakeFiles/cmTC_abac3.dir/src.cxx.o -o cmTC_abac3   && :
+/usr/bin/ld: CMakeFiles/cmTC_abac3.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.cxx:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.cxx:(.text+0x5e): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.cxx:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/wagnjin/catkin_ws/src/msckf_vio-master/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/wagnjin/Desktop/CLion-2021.3.3/clion-2021.3.3/bin/ninja/linux/ninja cmTC_7e235 && [1/2] Building CXX object CMakeFiles/cmTC_7e235.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_7e235
+FAILED: cmTC_7e235 
+: && /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_7e235.dir/CheckFunctionExists.cxx.o -o cmTC_7e235  -lpthreads && :
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/wagnjin/catkin_ws/src/msckf_vio-master/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/wagnjin/Desktop/CLion-2021.3.3/clion-2021.3.3/bin/ninja/linux/ninja cmTC_f0b4c && [1/2] Building CXX object CMakeFiles/cmTC_f0b4c.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_f0b4c
+FAILED: cmTC_f0b4c 
+: && /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=sgemm_ -rdynamic CMakeFiles/cmTC_f0b4c.dir/CheckFunctionExists.cxx.o -o cmTC_f0b4c   && :
+/usr/bin/ld: CMakeFiles/cmTC_f0b4c.dir/CheckFunctionExists.cxx.o: in function `main':
+CheckFunctionExists.cxx:(.text+0x14): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/wagnjin/catkin_ws/src/msckf_vio-master/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/wagnjin/Desktop/CLion-2021.3.3/clion-2021.3.3/bin/ninja/linux/ninja cmTC_fd35c && [1/2] Building CXX object CMakeFiles/cmTC_fd35c.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_fd35c
+FAILED: cmTC_fd35c 
+: && /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=sgemm_ -rdynamic CMakeFiles/cmTC_fd35c.dir/CheckFunctionExists.cxx.o -o cmTC_fd35c  -SSL2 && :
+c++: error: unrecognized command line option ‘-SSL2’
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/wagnjin/catkin_ws/src/msckf_vio-master/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/wagnjin/Desktop/CLion-2021.3.3/clion-2021.3.3/bin/ninja/linux/ninja cmTC_bdf06 && [1/2] Building CXX object CMakeFiles/cmTC_bdf06.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_bdf06
+FAILED: cmTC_bdf06 
+: && /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=cheev_ -rdynamic CMakeFiles/cmTC_bdf06.dir/CheckFunctionExists.cxx.o -o cmTC_bdf06  /usr/lib/x86_64-linux-gnu/libblas.so  -lpthread  -lm  -ldl && :
+/usr/bin/ld: CMakeFiles/cmTC_bdf06.dir/CheckFunctionExists.cxx.o: in function `main':
+CheckFunctionExists.cxx:(.text+0x14): undefined reference to `cheev_'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/wagnjin/catkin_ws/src/msckf_vio-master/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/wagnjin/Desktop/CLion-2021.3.3/clion-2021.3.3/bin/ninja/linux/ninja cmTC_cd990 && [1/2] Building CXX object CMakeFiles/cmTC_cd990.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_cd990
+FAILED: cmTC_cd990 
+: && /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=cheev_ -rdynamic CMakeFiles/cmTC_cd990.dir/CheckFunctionExists.cxx.o -o cmTC_cd990  -SSL2  /usr/lib/x86_64-linux-gnu/libblas.so && :
+c++: error: unrecognized command line option ‘-SSL2’
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/wagnjin/catkin_ws/src/msckf_vio-master/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/wagnjin/Desktop/CLion-2021.3.3/clion-2021.3.3/bin/ninja/linux/ninja cmTC_5ba20 && [1/2] Building CXX object CMakeFiles/cmTC_5ba20.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_5ba20
+FAILED: cmTC_5ba20 
+: && /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=cheev_ -rdynamic CMakeFiles/cmTC_5ba20.dir/CheckFunctionExists.cxx.o -o cmTC_5ba20  /usr/lib/x86_64-linux-gnu/liblapack.so  /usr/lib/x86_64-linux-gnu/libblas.so  -fortranlibs && :
+c++: error: unrecognized command line option ‘-fortranlibs’
+ninja: build stopped: subcommand failed.
+
+
+

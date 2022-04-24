@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/wagnjin/catkin_ws/src/msckf_vio-master/cmake-build-debug/devel/setup.sh
